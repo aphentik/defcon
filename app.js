@@ -50,7 +50,6 @@ stopwatch.on('reset:stopwatch', function(time) {
   io.sockets.emit('time', { time: time });
 });
 
-stopwatch.start();
 
 io.sockets.on('connection', function (socket) {
   io.sockets.emit('time', { time: stopwatch.getTime() });

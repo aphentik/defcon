@@ -13,7 +13,7 @@ function Stopwatch() {
     this.hour = 3600000;
     this.minute = 60000;
     this.second = 1000;
-    this.time = this.hour;
+    this.time = this.second*10;
     this.interval = undefined;
 
     events.EventEmitter.call(this);
@@ -55,7 +55,7 @@ Stopwatch.prototype.stop = function() {
 
 Stopwatch.prototype.reset = function() {
     console.log('Resetting Stopwatch!');
-    this.time = this.hour;
+    this.time = this.second*10;
     this.emit('reset:stopwatch', this.formatTime(this.time));
 };
 
