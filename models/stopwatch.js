@@ -36,6 +36,9 @@ Stopwatch.prototype.start = function() {
         return;
     }
 
+    if (this.time === 0) {
+	return;
+    }
     console.log('Starting Stopwatch!');
     // note the use of _.bindAll in the constructor
     // with bindAll we can pass one of our methods to
@@ -64,7 +67,7 @@ Stopwatch.prototype.onTick = function() {
 
     var formattedTime = this.formatTime(this.time);
     this.emit('tick:stopwatch', formattedTime);
-    
+    console.log(this.time);    
     if (this.time === 0) {
         this.stop();
     }
