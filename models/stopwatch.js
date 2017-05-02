@@ -69,7 +69,7 @@ Stopwatch.prototype.onTick = function() {
     this.emit('tick:stopwatch', formattedTime);
     console.log(this.time);    
     if (this.time === 0) {
-        this.emit('tick:stopwatch', 'APLAUSE ! :)');
+        this.emit('tick:stopwatch', 'APPLAUSE ! :)');
         this.stop();
     }
 };
